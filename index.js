@@ -1,42 +1,37 @@
-console.log('xx')
-
-// function countUniqueValues(arr) {
-
-//     let unique = []
-//     for (let i = 0; i < arr.length; i++) {
-//         let first = arr[i];
-//         let next = arr[i + 1];
-
-//         if (first != next) {
-//             unique.push(first)
-//         }
-
-//     }
-//     console.log(unique)
-// }
-
-// console.log(countUniqueValues([-1, 0, 0, 1, 2, 3, 4, 5, 6, 6]))
-// console.log(countUniqueValues([1, 1, 1, 1, 1, 2]))
-// console.log(countUniqueValues([1, 1, 1, 1, 1, 2])) //2
-
-// console.log(countUniqueValues([])) // 0
-// console.log(countUniqueValues([-2, -1, -1, 0, 1])) // 4
-
-
-function countUniqueValues(arr) {
-    if (arr.length == 0) return 0
-    let i = 0
-    for (j = 1; j < arr.length; j++) {
-        if (arr[i] != arr[j]) {
-            i++;
-            arr[i] = arr[j]
-        }
+function maxSubarraySum(arr, num) {
+    let maxSum = 0;
+    let tempSum = 0;
+    if (arr.length < num) return null;
+    for (let i = 0; i < num; i++) {
+        maxSum += arr[i];
     }
-    return i + 1
+    tempSum = maxSum;
+    for (let i = num; i < arr.length; i++) {
+        console.log(i)
+        tempSum = tempSum - arr[i - num] + arr[i];
+        maxSum = Math.max(maxSum, tempSum);
+    }
+    return maxSum;
 }
 
-console.log(countUniqueValues([-1, 0, 0, 1, 2, 3, 4, 5, 6, 6])) //8
-console.log(countUniqueValues([1, 1, 1, 1, 1, 2])) //2
+console.log(maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3))
 
-console.log(countUniqueValues([])) // 0
-console.log(countUniqueValues([-2, -1, -1, 0, 1])) // 4
+
+// function maxSubarraySum(arr, num) {
+//     if (num > arr.length) {
+//         return null;
+//     }
+//     var max = -Infinity;
+//     for (let i = 0; i < arr.length - num + 1; i++) {
+//         temp = 0;
+//         for (let j = 0; j < num; j++) {
+//             temp += arr[i + j];
+//         }
+//         if (temp > max) {
+//             max = temp;
+//         }
+//     }
+//     return max;
+// }
+
+// maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3)
