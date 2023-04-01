@@ -33,7 +33,7 @@ function capitalizeFirst(arr) {
     console.log(stringg)
     res.push(stringg);
     return res;
-} //['Banana', 'Taco', 'Car']
+} //['Car','Taco','Banana']
 
 // function capitalizeFirst(array) {
 //     if (array.length === 1) {
