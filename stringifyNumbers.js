@@ -17,9 +17,6 @@ function stringifyNumbers(obj) {
 }
 
 
-
-
-
 let objj = {
     num: 1,
     test: [3],
