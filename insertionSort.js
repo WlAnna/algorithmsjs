@@ -29,18 +29,16 @@ function insertionSort(arr) {
             //4 2
             //4 1
             //4 0
-            arr[j + 1] = arr[j]
             console.log(arr[j + 1], arr[j])
-
-            // 76 76
-            // 9 9 
-            // 2 2 
-            // 1 1 
+                // 0 76
+                // 76 9 
+                // 9 2 
+                // 2 1 
+            arr[j + 1] = arr[j]
         }
         arr[j + 1] = currentVal;
-        console.log(currentVal)
 
-        // 0
+        console.log(currentVal)
         console.log(arr)
     }
     return arr;
